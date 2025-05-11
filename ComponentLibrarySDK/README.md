@@ -1,4 +1,4 @@
-# Coding Conf Component Library
+# Coding Conf Component Library SDK
 
 A reusable component library for creating beautiful conference registration experiences with real-time collaboration features.
 
