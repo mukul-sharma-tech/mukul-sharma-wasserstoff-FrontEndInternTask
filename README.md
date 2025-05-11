@@ -1,4 +1,4 @@
-## 📗 Task 2: 📝 Real-Time Collaborative Editor & Component Library SDK
+## 📗 Task 1: 📝 Real-Time Collaborative Editor & Component Library SDK
 
 This repository contains two tasks:
 
@@ -17,8 +17,6 @@ This repository contains two tasks:
 - **No backend required**
 
 ---
-
-## 📘 Task 1: Real-Time Collaborative Editor
 
 ### ✅ Features
 
