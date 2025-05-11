@@ -1,93 +1,266 @@
 ## 📗 Task 1: 📝 Real-Time Collaborative Editor & Component Library SDK
+- A beautiful, real-time collaborative text editor built with React, TypeScript, and Yjs. Experience seamless collaboration with multiple cursors, rich text formatting, and live presence indicators.
 
-This repository contains two tasks:
+## Features
 
-1. **Real-Time Collaborative Editor** – A live text editor where multiple users can collaborate in real time.
-2. **Component Library SDK** – A reusable, minimal UI component library built from scratch using TypeScript and TailwindCSS.
+✨ **Real-time Collaboration**  
+- Multiple users can edit simultaneously
+- Live cursor positions and selections
+- Presence indicators showing online users
 
----
+🎨 **Rich Text Editing**  
+- Bold, italic, underline formatting
+- Headings and lists
+- Clean, modern interface with dark mode
 
-## 🚀 Tech Stack
+⚡ **Instant Syncing**  
+- WebRTC for peer-to-peer connectivity
+- Conflict-free data types (CRDT) with Yjs
+- Automatic version history
 
-- **ReactJS / Next.js**
-- **TypeScript**
-- **TailwindCSS**
-- **Yjs / BroadcastChannel API**
-- **TipTap / Quill / contenteditable**
-- **No backend required**
+🔒 **Secure & Private**  
+- End-to-end encrypted communication
+- No central server storing your data
+- Peer connections established directly between collaborators
 
----
+## Tech Stack
 
-### ✅ Features
+- **Frontend**: React 18, TypeScript
+- **Styling**: Tailwind CSS
+- **Editor**: Tiptap (ProseMirror-based)
+- **Collaboration**: Yjs + WebRTC
+- **Bundler**: Vite
+- **State Management**: React Hooks
 
-- Real-time collaboration between multiple users across tabs/windows
-- Live sync with **instant content updates**
-- **User identification** via prompt or login
-- Tracks **who is editing what** using color-coded cursors or indicators
-- Works locally or with in-browser APIs like `BroadcastChannel` or `WebRTC`
+## Project Structure
 
-### 🛠️ Installation & Running
+```
+├Project
+├── node_modules/
+├── src/
+│ ├── components/
+│ ├── pages/
+│ │ ├── CollaborativeEditor/ # Main editor implementation
+│ │ ├── Editor.tsx # Standalone editor component
+│ │ └── App.tsx # Main application component
+│ ├── lib/ # Shared utilities
+│ ├── styles/ # Global styles
+│ ├── main.tsx # Application entry point
+│ └── vite-env.d.ts # TypeScript declarations
+├── .gitignore
+├── package.json
+├── tsconfig.json
+├── tailwind.config.js
+└── vite.config.ts
+```
+## Components
 
-```bash
-# Clone the repository
-git clone https://github.com/your-username/realtime-editor-sdk.git
-cd realtime-editor-sdk
+The library includes these core components:
 
-# Install dependencies
-npm install
+| Component | Description |
+|-----------|-------------|
+| `Button` | Customizable button with variants |
+| `TextField` | Input field with validation |
+| `UploadField` | File upload with drag-and-drop |
+| `Card` | Container with multiple styles |
+| `Typography` | Consistent text styling |
+| `Avatar` | User avatar with fallback |
+| `Ticket` | Conference ticket display |
+| `Layout` | Page layout system |
 
-# Run the app
-npm run dev
+## Usage
+
+Here's how to use the components in your project:
+
+```jsx
+import { 
+  Button, 
+  TextField, 
+  Card, 
+  Typography 
+} from './lib/components';
+
+function MyForm() {
+  const [name, setName] = useState('');
+
+  return (
+    <Card variant="default">
+      <Typography variant="h2" color="#ffffff">
+        Register Now
+      </Typography>
+      
+      <TextField
+        id="name"
+        label="Your Name"
+        value={name}
+        onChange={setName}
+        required
+      />
+      
+      <Button variant="primary" size="large">
+        Submit
+      </Button>
+    </Card>
+  );
+}
 ```
 
 
+## Getting Started
 
+### Prerequisites
 
+- Node.js v18+
+- npm v9+ or yarn
 
-## 📗 Task 2: Component Library SDK
+### Installation
 
-### ✅ Features
+## Running the Demo
 
-- Fully reusable and self-contained components
-- Built from scratch without external UI libraries
-- Typesafe and strongly typed with **TypeScript**
-- Clean structure with DRY principles
-- No inline styles – all styling via TailwindCSS utility classes
-- Each component limited to **max 200 lines**
-
-### ✨ Included Components (examples)
-
-- `Button`
-- `Input`
-- `Card`
-- `Avatar`
-- `Modal`
-- `UserBadge`
-
-Each component is placed in the `/components` or `/lib` folder and can be imported easily across the app.
-
-### 📄 Demo Pages
-
-You can find demos for the components inside the `/pages` or `/demos` folder:
-
-- `/pages/buttons.tsx`
-- `/pages/form.tsx`
-- `/pages/profile.tsx`
-
-Each page demonstrates usage of one or more components from the library.
-
----
-
-### 🛠️ Installation & Running (same as Task 1)
-
+1. Clone this repository
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/realtime-editor-sdk.git
-cd realtime-editor-sdk
-
-# Install dependencies
-npm install
-
-# Run the app
-npm run dev
+git clone https://github.com/mukul-sharma-tech/mukul-sharma-wasserstoff-FrontEndInternTask
+cd Real-TimeCollaborativeEditor
 ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Start the development server:
+   ```
+   npm run dev
+   ```
+4. Open your browser to the local server URL
+
+## Collaboration Features
+
+The component library supports real-time collaboration:
+
+- Change tracking for all form fields
+- User attribution for each change
+- History of all modifications with timestamps
+
+This allows for identifying which user made which change.
+
+## Troubleshooting
+Issue	Solution
+- Peers not connecting	Check firewall/WebRTC permissions
+- Formatting not working	Verify schema includes required marks
+- Sync delays	Check network conditions
+
+
+
+
+
+## 📗 Task 2:  # Coding Conf Component Library SDK
+
+A reusable component library for creating beautiful conference registration experiences with real-time collaboration features.
+
+## Features
+
+- Self-contained, reusable React components
+- Clean, modern design with a dark theme
+- Form validation and error handling
+- File upload with preview
+- Responsive design
+- Real-time user attribution for collaborative editing
+- TypeScript support for type safety
+
+## Component Library Structure
+
+```
+src/
+├── lib/
+│   ├── components/        # Reusable UI components
+│   ├── theme/             # Design system: colors, typography, spacing
+│   ├── types/             # TypeScript interfaces
+│   └── utils/             # Helper functions
+├── pages/                 # Demo pages using the components
+└── App.tsx                # Main application
+```
+
+## Components
+
+The library includes these core components:
+
+- `Button`: Customizable button with multiple variants and states
+- `TextField`: Text input field with validation
+- `UploadField`: File upload component with drag-and-drop
+- `Card`: Container component with different styles
+- `Typography`: Text component with consistent styling
+- `Avatar`: User avatar display with fallback
+- `Ticket`: Conference ticket display
+- `Layout`: Page layout with background styling
+
+## Usage
+
+Here's how to use the components in your project:
+
+```jsx
+import { 
+  Button, 
+  TextField, 
+  Card, 
+  Typography 
+} from './lib/components';
+
+function MyForm() {
+  const [name, setName] = useState('');
+
+  return (
+    <Card variant="default">
+      <Typography variant="h2" color="#ffffff">
+        Register Now
+      </Typography>
+      
+      <TextField
+        id="name"
+        label="Your Name"
+        value={name}
+        onChange={setName}
+        required
+      />
+      
+      <Button variant="primary" size="large">
+        Submit
+      </Button>
+    </Card>
+  );
+}
+```
+
+## Demo Pages
+
+The project includes two demo pages:
+
+1. **Registration Page**: Form for collecting user information
+2. **Confirmation Page**: Displays generated ticket after registration
+
+## Running the Demo
+
+1. Clone this repository
+```bash
+git clone https://github.com/mukul-sharma-tech/mukul-sharma-wasserstoff-FrontEndInternTask
+cd ComponentLibrarySDK
+```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Start the development server:
+   ```
+   npm run dev
+   ```
+4. Open your browser to the local server URL
+
+## Collaboration Features
+
+The component library supports real-time collaboration:
+
+- Change tracking for all form fields
+- User attribution for each change
+- History of all modifications with timestamps
+
+This allows for identifying which user made which change.
